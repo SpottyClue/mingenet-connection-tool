@@ -18,17 +18,17 @@ SWEP.Primary.Ammo		= ""
 SWEP.Secondary.Ammo		= ""
 
 if CLIENT then
-    local isPanelOpen = false
+    local isOpen = false
     local f = nil
 	
     local function createPanel(ply)
-        if isPanelOpen then return end
+        if isOpen then return end
         f = vgui.Create("DFrame")
         f:SetTitle("Mingenet Connection Tool")
         f:SetSize(300, 100)
         f:Center()
         f:MakePopup()
-        isPanelOpen = true
+        isOpen = true
 		
         local b = vgui.Create("DButton", f)
         b:SetSize(150, 50)
@@ -46,14 +46,14 @@ if CLIENT then
             ply:PrintMessage(HUD_PRINTTALK, "Mingebag(s) count: " .. count)
         end
         f.OnClose = function()
-            isPanelOpen = false
+            isOpen = false
         end
     end
     hook.Add("KeyPress", "UseKey", function(ply, key)
         if key == IN_USE then
             local aw = ply:GetActiveWeapon()
             if IsValid(aw) and aw:GetClass() == "minge_connector_tool" then
-                if not isPanelOpen then
+                if not isOpen then
                     createPanel(ply)
                 end
             end
