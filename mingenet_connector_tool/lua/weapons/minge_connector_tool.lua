@@ -78,7 +78,7 @@ function SWEP:PrimaryAttack()
 	if GM13 and GM13.Lobby and GM13.Lobby.SelectBestServer then
         GM13.Lobby:SelectBestServer()
 		self.Owner:PrintMessage( HUD_PRINTTALK, "Searching for the best servers, please wait." )
-		self.Owner:EmitSound("friends/friend_online.wav", 75, 100, 1, CHAN_VOICE_BASE)
+		self.Owner:EmitSound("friends/message.wav", 75, 100, 1, CHAN_VOICE_BASE)
     end
 end
 
