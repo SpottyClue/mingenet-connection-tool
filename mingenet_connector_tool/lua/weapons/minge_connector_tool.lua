@@ -35,7 +35,7 @@ if CLIENT then
         b:SetPos(75, 40)
         b:SetText("Get mingebag count")
         b.DoClick = function()
-		    ply:EmitSound("weapons/mct/count.wav", 75, 100, 1)
+		    ply:EmitSound("common/bugreporter_succeeded.wav", 75, 100, 1)
 			f:Close()
             local count = 0
             for _, ent in pairs(ents.GetAll()) do
